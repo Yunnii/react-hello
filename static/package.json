@@ -1,0 +1,25 @@
+{
+  "name": "static",
+  "version": "0.0.1",
+  "scripts": {
+    "run": "./node_modules/.bin/webpack --display-error-details",
+    "watch": "webpack --progress --colors --watch",
+    "deps": "npm install"
+  },
+  "dependencies": {
+    "b_": "*",
+    "webpack": "~1.10.0",
+    "webpack-dev-server": "~1.10.0",
+    "i18n-webpack-plugin": "*",
+    "extract-text-webpack-plugin": "*",
+    "react-hot-loader": "*",
+    "style-loader": "^0.8.0",
+    "baggage-loader": "*",
+    "babel-loader": "*",
+    "css-loader": "*",
+    "json-loader": "*",
+    "file-loader": "*",
+    "jsx-loader": "*",
+    "react": "~0.13.3"
+  }
+}

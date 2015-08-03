@@ -1,4 +1,4 @@
-var CommentBox = require('CommentBox');
+var CommentBox = require('../blocks/CommentBox/CommentBox.jsx');
 
 var data = [
     {author: 'Dave', text: 'hello'},
