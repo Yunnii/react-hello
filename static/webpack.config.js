@@ -7,10 +7,9 @@ var config =  {
         this.resolve.alias[name] = path;
         this.module.noParse.push(new RegExp(path));
     },
-    entry: ['./views/index/main.jsx'],
+    entry: ['./views/main.jsx'],
     resolve: {
         modulesDirectories: [
-            '',
             'blocks',
             'node_modules'
         ],
@@ -19,13 +18,14 @@ var config =  {
         }
     },
     output: {
-        filename: 'bundle.ru.js'
+        path: './deploy/',
+        filename: '[name].bundle.ru.js'
     },
     module: {
         preLoaders: [
             {
-                test: /\/blocks\/.+index\.jsx$/,
-                loader: 'baggage?index.css&script.js'
+                test: /\/blocks\/.*\.jsx$/,
+                loader: 'baggage?[dir].css&script.js'
             }
         ],
         noParse: [],
@@ -39,9 +39,9 @@ var config =  {
         ]
     },
     plugins: [
-        new ExtractTextPlugin("style.css"),
-        new I18nPlugin(require("./i18n/ru.json"))
+        new ExtractTextPlugin("[name].css"),
+        new I18nPlugin(require("./../i18n/ru.json"))
     ]
-}
+};
 
 module.exports = config;
